@@ -16,7 +16,8 @@ csvpath = os.path.join('.', 'Resources', 'budget_data.csv')
 with open(csvpath) as csvfile:
 
     csvreader = csv.reader(csvfile, delimiter=',')
-    next(csvreader)
+    csv_header = next(csvreader)
+    # print(f"Header: {csv_header}")
 
     monthly_pnl = 0
     pnl_total = 0
