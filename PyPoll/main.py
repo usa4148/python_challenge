@@ -1,5 +1,5 @@
 #
-# Dan Cusick
+# Dan C.
 # Data Scienct Boot Camp
 # python-challenge PyPoll
 #
@@ -31,11 +31,11 @@ with open(csvpath) as csvfile:
             #print(f"{vote[2]}")
 
 
-
+total_v = csvreader.line_num - 1
 print("\nElection Results","\n-----------------------------")
-print("Total Votes:", (csvreader.line_num - 1),"\n-----------------------------")
+print("Total Votes:", (total_v),"\n-----------------------------")
 #print(" Total Votes:", num_votes,"\n-----------------------------")
 #print(" Winner: ", pnl_total,"\n-----------------------------")
 #print(f"{candidates}")
 for x in candidates:
-    print(x,": ", candidates[x])
+    print(x,": ", "{:.3f}%".format(candidates[x] / total_v * 100), candidates[x])
