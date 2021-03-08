@@ -8,7 +8,7 @@
 import os
 import csv
 
-pybank = os.path.join('.', 'PyBank.txt')
+pybank = os.path.join('.','analysis', 'PyBank.txt')
 pybankwriter = open(pybank,'w')
 
 csvpath = os.path.join('.', 'Resources', 'budget_data.csv')
