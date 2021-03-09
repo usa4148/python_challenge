@@ -1,9 +1,7 @@
 #
-# Dan Cusick
+# Dan C
 # Data Scienct Boot Camp
 # python-challenge PyBank
-#
-#
 #
 import os
 import csv
