@@ -26,21 +26,34 @@ with open(csvpath) as csvfile:
     change_sum = 0
     previous_pnl = 0
 
+    pnls = {}
+
     for row in csvreader:
-        monthly_pnl = int(row[1])
-        pnl_total = pnl_total + monthly_pnl
+     
+        pnls = {row[0]:int(row[1])}
+        #monthly_pnl = int(cash[1])
+        #pnl_total = pnl_total + monthly_pnl
+        #print(pnls)
+        print(pnls)
+
+    
+
+
  
-        if csvreader.line_num >=1:
-            tmp_pnl = int(row[1])
-            change_sum = change_sum + (tmp_pnl - previous_pnl)
-            #print(f"tmp_pnl",tmp_pnl)
-            if tmp_pnl > 0 and tmp_pnl > pnl_max_value:
-                pnl_max_value = tmp_pnl
-                pnl_max_date = row[0]
-            if tmp_pnl <= 0 and tmp_pnl < pnl_min_value:
-                pnl_min_value = tmp_pnl
-                pnl_min_date = row[0]
-            previous_pnl = tmp_pnl
+   #      if csvreader.line_num > 1:
+        #For cvsreader.line_num:
+    #        tmp_pnl = int(row[1])
+    #        #print(cvsreader.line_num)
+    #        change_sum = change_sum + (tmp_pnl - previous_pnl)
+    #        print(change_sum," ", tmp_pnl)
+    #        #print(f"tmp_pnl",tmp_pnl)
+    #        if tmp_pnl > 0 and tmp_pnl > pnl_max_value:
+    #            pnl_max_value = tmp_pnl
+    #            pnl_max_date = row[0]
+    #        if tmp_pnl <= 0 and tmp_pnl < pnl_min_value:
+    #            pnl_min_value = tmp_pnl
+    #            pnl_min_date = row[0]
+    #    previous_pnl = tmp_pnl """
 
     print("\n Financial Analysis \n","-----------------------------")
     print(" Total Months:", csvreader.line_num - 1)
