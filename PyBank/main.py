@@ -40,57 +40,15 @@ with open(csvpath) as csvfile:
         change_sum = change_sum + int(row[1]) - previous_pnl
         previous_pnl = pnls.get(row[0])
         
-    #print(pnls)
-    #print("%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%")
-    #print(avg)
-    #print(cnt)
-    #print("avg change", change_sum / cnt -1)
+    cnt = 0
     
+    for key in avg:
+        cnt +=1
+        change_sum += avg[key]
+    pnl_total = change_sum / cnt
+
+    print(" cnt ",cnt ,"change_sum ", change_sum)  
     
-    #for k,v in avg.items():
-    #    print("k",k," ","v",v)
-    #    if v > pnl_max_value:
-    #        pnl_max_key = k
-    #        pnl_max_value = v
-    #    if v < pnl_min_value:
-    #        pnl_min_key = k
-    #        pnl_min_value = v
-
-    #tmp = max(avg, key=avg.get)
-    #print("WTF::: ",avg[tmp])
-
-    
-
-    #pnl_max_key = max(avg, value=avg.get)
-    #print("max key",pnl_max_key, pnl_max_value)
-    ##pnl_min_key = min(avg, value=avg.get)
-    #print("min key",pnl_min_key, pnl_min_value)
-
-    #count = 0
-    #csum = 0
-    #for key in avg:
-    #    count +=1
-    #    csum += avg[key]
-    #print("This is the mean: ", csum/count)
-    
-
-
- 
-   #      if csvreader.line_num > 1:
-        #For cvsreader.line_num:
-    #        tmp_pnl = int(row[1])
-    #        #print(cvsreader.line_num)
-    #        change_sum = change_sum + (tmp_pnl - previous_pnl)
-    #        print(change_sum," ", tmp_pnl)
-    #        #print(f"tmp_pnl",tmp_pnl)
-    #        if tmp_pnl > 0 and tmp_pnl > pnl_max_value:
-    #            pnl_max_value = tmp_pnl
-    #            pnl_max_date = row[0]
-    #        if tmp_pnl <= 0 and tmp_pnl < pnl_min_value:
-    #            pnl_min_value = tmp_pnl
-    #            pnl_min_date = row[0]
-    #    previous_pnl = tmp_pnl """
-
     print("\n Financial Analysis \n","-----------------------------")
     print(" Total Months:", csvreader.line_num - 1)
     print(" Total: $", pnl_total)
