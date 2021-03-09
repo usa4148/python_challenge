@@ -52,6 +52,6 @@ with open(csvpath) as csvfile:
     print("\n Financial Analysis \n","-----------------------------", file = pybankwriter)
     print(" Total Months:", csvreader.line_num - 1, file = pybankwriter)
     print(" Total: $", pnl_total, file = pybankwriter)
-    print(" Average Change: $", "{:.2f}".format(change_sum / (csvreader.line_num - 1), file = pybankwriter))
+    print(" Average Change: $", "{:.2f}".format(change_sum / (csvreader.line_num - 1)), file = pybankwriter)
     print(" Greatest Increase in Profits: ", pnl_max_date, "($",pnl_max_value,")", file = pybankwriter)
     print(" Greatest Decrease in Profits: ", pnl_min_date, "($",pnl_min_value,")", file = pybankwriter)
