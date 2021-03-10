@@ -34,7 +34,8 @@ with open(csvpath) as csvfile:
         pnls[row[0]] = int(row[1])
         pnl_total = pnl_total + int(row[1])
 
-        # Load up the monthly change dict         if cnt > 1 :
+        # Load up the monthly change dict 
+        if cnt > 1 :
             avg[row[0]] =int(row[1]) - previous_pnl
         change_sum = change_sum + int(row[1]) - previous_pnl
         previous_pnl = pnls.get(row[0])
