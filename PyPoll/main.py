@@ -36,7 +36,7 @@ total_v = csvreader.line_num - 1
 print("\nElection Results","\n-----------------------------")
 print("Total Votes:", (total_v),"\n-----------------------------")
 for x in candidates:
-    print(x,": ", "{:.3f}%".format(candidates[x] / total_v * 100), candidates[x])
+    print(x,": ", "{:.3f}%".format(candidates[x] / total_v * 100), "({0})".format(candidates[x]))
 winner = max(candidates, key=candidates.get)
 print("-----------------------------")
 print("Winner: ", winner,"\n-----------------------------")
@@ -45,7 +45,7 @@ print("Winner: ", winner,"\n-----------------------------")
 print("\nElection Results","\n-----------------------------", file = pypollwriter)
 print("Total Votes:", (total_v),"\n-----------------------------", file = pypollwriter)
 for x in candidates:
-    print(x,": ", "{:.3f}%".format(candidates[x] / total_v * 100), candidates[x], file = pypollwriter)
+    print(x,": ", "{:.3f}%".format(candidates[x] / total_v * 100), "({0})".format(candidates[x]), file = pypollwriter)
 print("-----------------------------", file = pypollwriter)
 print("Winner: ", winner,"\n-----------------------------", file = pypollwriter)
 
